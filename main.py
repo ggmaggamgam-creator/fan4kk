@@ -69,8 +69,9 @@ def main(page: ft.Page):
                 result_var.value = str(result)
             except (SyntaxError, ValueError, TypeError, ZeroDivisionError, OverflowError):
                 result_var.value = "Ошибка"
-        elif current_text == "Ошибка" or current_text == "0":
+        elif current_text == "Ошибка" or current_text == "0" or result_var.data == "calculated":
             result_var.value = char
+            result_var.data = None
         else:
             result_var.value = current_text + char
 
